@@ -7,17 +7,16 @@
 
 package frc.robot;
 
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.Solenoid1_Forward;
-import frc.robot.commands.Solenoid1_Reverse;
-import frc.robot.commands.Solenoid2_Forward;
-import frc.robot.commands.Solenoid2_Reverse;
-import frc.robot.commands.Solenoid3_Forward;
-import frc.robot.commands.Solenoid3_Reverse;
-import frc.robot.commands.Solenoid4_Forward;
-import frc.robot.commands.Solenoid4_Reverse;
+import frc.robot.commands.Solenoid1_Off;
+import frc.robot.commands.Solenoid1_On;
+import frc.robot.commands.Solenoid2_Off;
+import frc.robot.commands.Solenoid2_On;
+import frc.robot.commands.Solenoid3_Off;
+import frc.robot.commands.Solenoid3_On;
+import frc.robot.commands.Solenoid4_Off;
+import frc.robot.commands.Solenoid4_On;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -34,14 +33,14 @@ public class OI {
     return joystick.getRawAxis(axis);
   }
   public OI(){
-    tube1button.whenPressed(new Solenoid1_Forward());
-    tube1button.whenReleased(new Solenoid1_Reverse());
-    tube2button.whenPressed(new Solenoid2_Forward());
-    tube2button.whenReleased(new Solenoid2_Reverse());
-    tube3button.whenPressed(new Solenoid3_Forward());
-    tube3button.whenInactive(new Solenoid3_Reverse());
-    tube4button.whenPressed(new Solenoid4_Forward());
-    tube4button.whenReleased(new Solenoid4_Reverse());
+    tube1button.whenPressed(new Solenoid1_On());
+    tube1button.whenReleased(new Solenoid1_Off());
+    tube2button.whenPressed(new Solenoid2_On());
+    tube2button.whenReleased(new Solenoid2_Off());
+    tube3button.whenPressed(new Solenoid3_On());
+    tube3button.whenInactive(new Solenoid3_Off());
+    tube4button.whenPressed(new Solenoid4_On());
+    tube4button.whenReleased(new Solenoid4_Off());
   }
   
   //// CREATING BUTTONS
