@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -24,39 +25,40 @@ import frc.robot.subsystems.Valves;
 public class Robot extends TimedRobot {
   public static DriveTrain driveTrain = new DriveTrain();
   public static Valves valves = new Valves();
-  //public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  // public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
   Command m_autonomousCommand;
   SendableChooser<Command> chooser = new SendableChooser<>();
- 
 
   /**
-   * This function is run when the robot is first started up and should be
-   * used for any initialization code.
+   * This function is run when the robot is first started up and should be used
+   * for any initialization code.
    */
   @Override
   public void robotInit() {
     m_oi = new OI();
-   
+    CameraServer.getInstance().startAutomaticCapture(0);
   }
 
   /**
-   * This function is called every robot packet, no matter the mode. Use
-   * this for items like diagnostics that you want ran during disabled,
-   * autonomous, teleoperated and test.
+   * This function is called every robot packet, no matter the mode. Use this for
+   * items like diagnostics that you want ran during disabled, autonomous,
+   * teleoperated and test.
    *
-   * <p>This runs after the mode specific periodic functions, but before
-   * LiveWindow and SmartDashboard integrated updating.
+   * <p>
+   * This runs after the mode specific periodic functions, but before LiveWindow
+   * and SmartDashboard integrated updating.
    */
   @Override
   public void robotPeriodic() {
+
   }
 
   /**
-   * This function is called once each time the robot enters Disabled mode.
-   * You can use it to reset any subsystem information you want to clear when
-   * the robot is disabled.
+   * This function is called once each time the robot enters Disabled mode. You
+   * can use it to reset any subsystem information you want to clear when the
+   * robot is disabled.
    */
   @Override
   public void disabledInit() {

@@ -9,6 +9,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.EStop;
+import frc.robot.commands.Horn_Off;
+import frc.robot.commands.Horn_On;
 import frc.robot.commands.Solenoid1_Off;
 import frc.robot.commands.Solenoid1_On;
 import frc.robot.commands.Solenoid2_Off;
@@ -28,7 +31,8 @@ public class OI {
   public static final JoystickButton tube2button = new JoystickButton(joystick, RobotMap.TUBE_2_BUTTON_ID);
   public static final JoystickButton tube3button = new JoystickButton(joystick, RobotMap.TUBE_3_BUTTON_ID);
   public static final JoystickButton tube4button = new JoystickButton(joystick, RobotMap.TUBE_4_BUTTON_ID);
-
+  public static final JoystickButton hornbutton = new JoystickButton(joystick, RobotMap.HORN_BUTTON_ID);
+  public static final JoystickButton eStop = new JoystickButton(joystick, RobotMap.E_STOP);
   public double GetJoystickRawAxis(final int axis){
     return joystick.getRawAxis(axis);
   }
@@ -41,6 +45,9 @@ public class OI {
     tube3button.whenInactive(new Solenoid3_Off());
     tube4button.whenPressed(new Solenoid4_On());
     tube4button.whenReleased(new Solenoid4_Off());
+    hornbutton.whenPressed(new Horn_On());
+    hornbutton.whenReleased(new Horn_Off());
+    eStop.whenPressed(new EStop());
   }
   
   //// CREATING BUTTONS

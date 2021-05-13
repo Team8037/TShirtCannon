@@ -15,30 +15,30 @@ package frc.robot;
  */
 public class RobotMap {
   //USB
-  public static final int JOYSTICK_ID = 1;
-
-
-  public static final int TUBE_1_BUTTON_ID = 3;
-  public static final int TUBE_2_BUTTON_ID = 4;
-  public static final int TUBE_3_BUTTON_ID = 5;
-  public static final int TUBE_4_BUTTON_ID = 6;
-  
-  //Controller Values 
-  public static final int Y_AXIS_ID = 1;
-  public static final int X_AXIS_ID = 0; 
-  public static final int Z_AXIS_ID = 2;
-  
-  //CAN
-  public static final int MOTOR_RIGHT_1_ID = 3;
-  public static final int MOTOR_LEFT_1_ID = 1;
-  public static final int MOTOR_LEFT_2_ID = 2;
-  public static final int MOTOR_RIGHT_2_ID = 4;
-
-  //SOLENOIDS
-  public static final int TUBE_1_ID = 1;
-  public static final int TUBE_2_ID = 2;
-  public static final int TUBE_3_ID = 0;
-  public static final int TUBE_4_ID = 3;
+    public static final int JOYSTICK_ID = 1;
+    //BUTTONS
+    public static final int TUBE_1_BUTTON_ID = 3;
+    public static final int TUBE_2_BUTTON_ID = 4;
+    public static final int TUBE_3_BUTTON_ID = 5;
+    public static final int TUBE_4_BUTTON_ID = 6;
+    public static final int HORN_BUTTON_ID = 1;
+    public static final int E_STOP = 2;
+    //AXIS
+    public static final int Y_AXIS_ID = 1;
+    public static final int X_AXIS_ID = 0; 
+    public static final int Z_AXIS_ID = 2;
+    public static final int SLIDER_ID = 3;
+    //MOTORS
+    public static final int MOTOR_RIGHT_1_ID = 3;
+    public static final int MOTOR_LEFT_1_ID = 1;
+    public static final int MOTOR_LEFT_2_ID = 2;
+    public static final int MOTOR_RIGHT_2_ID = 4;
+    //SOLENOIDS
+    public static final int TUBE_1_ID = 1;
+    public static final int TUBE_2_ID = 2;
+    public static final int TUBE_3_ID = 0;
+    public static final int TUBE_4_ID = 3;
+    public static final int HORN_ID = 4;
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.

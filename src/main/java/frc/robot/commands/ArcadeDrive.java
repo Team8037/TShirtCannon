@@ -25,9 +25,10 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double Move = -Robot.m_oi.GetJoystickRawAxis(RobotMap.Y_AXIS_ID);
+    double Move = -Robot.m_oi.GetJoystickRawAxis(RobotMap.Y_AXIS_ID); 
     double Turn = Robot.m_oi.GetJoystickRawAxis(RobotMap.X_AXIS_ID);
-    Robot.driveTrain.manualDrive(Move, Turn);
+    double adjustment = Robot.m_oi.GetJoystickRawAxis(RobotMap.SLIDER_ID);
+    Robot.driveTrain.manualDrive(Move*adjustment, Turn*adjustment);
   }
 
   // Make this return true when this Command no longer needs to run execute()
